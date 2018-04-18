@@ -1,0 +1,37 @@
+<html>
+    <head>
+       <title>Registration Assignement</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_css.css')}}">
+    </head>
+    <body>
+    <div id="wrapper">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+	    {% endwith %}
+        <form action= '/result'  method='post'>
+            <label>
+                Email: <input type='email' name='email'>
+            </label>
+            <label>
+                First Name: <input type='text' name='first_name'>
+            </label>
+            <label>
+                Last Name: <input type='text' name='last_name'>
+            </label>
+            <label>
+                Password: <input type='password' name='password'>
+            </label>
+            <label>
+                Confirm Password: <input type='password' name='confirm_password'>
+            </label>
+            <label>
+                <input type='submit' id="button" name='button' value=Button>
+            </label>
+        </form>
+    </div>
+    </body>
+</html
